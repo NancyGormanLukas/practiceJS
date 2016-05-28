@@ -1,10 +1,10 @@
 //setup variables
 var clickSum = 0
-var targetNumber
+var targetNumber =0
 var endOfGame = false
 var wins = 0
 var losses = 0
-var playerLoses
+var playerLoses=falseb
 
 var crystal = {
 	blue : {
@@ -29,38 +29,34 @@ var crystal = {
 };
 
 $(document).ready(function(){
-	
-	$('#blue').append('<img src=' + crystal.blue.pathtoimg);
+
 	$('#blue').on("click", function(){
 		if (endOfGame == false){
-		clickSum=clickSum + crystal.blue.power;
-		checkScore();
-		$('#clickSum').html(clickSum);
+			clickSum+=crystal.blue.power;
+			checkScore();
+			$('#clickSum').html(clickSum);
 		};
 	})
 
-	$('#green').append('<img src=' + crystal.green.pathtoimg);
 	$('#green').click(function(){
 		if (endOfGame == false){
-		clickSum=clickSum + crystal.green.power;
+		clickSum+=crystal.green.power;
 		checkScore();
 		$('#clickSum').html(clickSum);
 		};
 	})
 
-	$('#red').append('<img src=' + crystal.red.pathtoimg);
 	$('#red').click(function(){
 		if (endOfGame == false){
-		clickSum=clickSum + crystal.red.power;
+		clickSum+=crystal.red.power;
 		checkScore();
 		$('#clickSum').html(clickSum);
 		};
 	})
 
-	$('#purple').append('<img src=' + crystal.purple.pathtoimg);  
 	$('#purple').click(function(){
 		if (endOfGame == false){
-		clickSum=clickSum + crystal.purple.power;
+		clickSum+=crystal.purple.power;
 		checkScore();
 		$('#clickSum').html(clickSum);
 		};
@@ -70,12 +66,12 @@ $(document).ready(function(){
 	function startgame(){
 			endOfGame = false;	
 			playerLoses = false;
-			clickSum = 0
-			targetNumber = Math.floor(Math.random() * (120-19)) + 1;
+			clickSum = 0;
+			targetNumber = Math.floor(Math.random() *(120-19)) + 19;
 			
 			crystal.blue.power = Math.floor(Math.random() *(12-1)) + 1;
 			crystal.green.power = Math.floor(Math.random() *(12-1)) + 1;
-			crystal.red.power = Math.floor(Math.random() * (12-1)) + 1;
+			crystal.red.power = Math.floor(Math.random() *(12-1)) + 1;
 			crystal.purple.power = Math.floor(Math.random() *(12-1)) + 1;
 			
 			//set up beginning- on click this will happen
@@ -84,29 +80,40 @@ $(document).ready(function(){
 			// after first game
 			$('#wins').html("Wins: " + wins);
 			$('#losses').html("Losses: "+losses);
+			$('.alert-info').hide(1000);
+			$('.alert-warning').hide(1000);
+			$('.alert-success').hide(1000);
 	}
 
 	function checkScore(){
 			if (clickSum == targetNumber){
-					endOfGame = true;
+					endOfGame =true;
 					wins++;
-					$('#alert alert-success').alert("You win!");
+					$('.alert-success').show(1000);
+					$('.alert-info').hide(1000);
+					$('.alert-warning').hide(1000);
 					$('#button').empty();
-			}else if (clickSum > targetNumber){
-						playerloses = true;
-						endOfGame = true;
-						losses++;
-						$('#alert alert-warning').alert("Better luck next time!");
-						$('#button').empty();
 
 			}else if (clickSum < targetNumber){
-						playerloses = false;
-						endOfGame = false;
-						$('#alert alert-info').alert("Keep going...");
-					};
-	}
-	$('#button').on("click", function(){
+						playerloses =false;
+						endOfGame	=false
+						$('.alert-warning').show(1000);
+						$('.alert-info').hide(1000);
+						$('.alert-success').hide(1000);
+						
 
+			}else if (clickSum > targetNumber){
+						playerloses =true;
+						endOfGame =true;
+						losses++;
+						$('.alert-info').show(1000);
+						$('.alert-warning').hide(1000);
+						$('.alert-success').hide(1000);
+						$('#button').empty();
+					};
+
+	}
+	$('.btn').on("click", function(){
 		startgame();
 	})
 
