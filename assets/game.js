@@ -4,7 +4,7 @@ var targetNumber =0
 var endOfGame = false
 var wins = 0
 var losses = 0
-var playerLoses=falseb
+var playerLoses=false
 
 var crystal = {
 	blue : {
@@ -75,8 +75,8 @@ $(document).ready(function(){
 			crystal.purple.power = Math.floor(Math.random() *(12-1)) + 1;
 			
 			//set up beginning- on click this will happen
-			$('#clickSum').html(clickSum);
-			$('#targetNumber').html(targetNumber);
+			//$('#clickSum').html(clickSum);
+			//$('#targetNumber').html(targetNumber);
 			// after first game
 			$('#wins').html("Wins: " + wins);
 			$('#losses').html("Losses: "+losses);

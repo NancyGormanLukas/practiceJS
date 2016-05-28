@@ -1,14 +1,27 @@
 .heading {
 	font-size: 50px;
+	font-family: Verdana;
+	color:red;
+
+}
+
+.instructions {
+	font-size: 16px;
+	color: blue;
 	font-family: Comic;
 }
-button {
-	color: red;
+
+.targetSum {
+	padding:4px, 6px;
+	border: 2px; color: blue;
+}
+
+.clickSum {
+	padding:4px, 6px;
+	border: 2px; color: blue;
+}
+
+.wins {
 	font-family: Times;
+	color: red;
 }
-
-li {
-	font-size: 20px;
-	color: green;
-}
-

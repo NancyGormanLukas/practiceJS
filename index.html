@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>crystalCounterGame</title>
   <link rel="stylesheet" type="text/css" href="assets/reset.css">
@@ -12,67 +13,80 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script type="text/javascript" src="assets/game.js"></script>
 
-  </head>
-  <body> 
-  <body style="background-color:lavender">
-  
-  <div class= "row">
-    <div class= "col-md-12">
-      <div class= "container text-center">
-        <h3>Crystal Ball Magic Addition Game</h3>
+</head>
+
+<body style="background-color:lavender">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
+        <h3 class="heading">Crystal Ball Magic Addition Game</h3>
         <br>
         <h4>How to Play</h4>
-        <ul>
-            <li>At the start of each game, you will be given a Magic Number that you need to match exactly by determining the mystery values of each crystal ball.
-            </li>
-            <li>By clicking on one of the four crystal balls below, you will increase your sum by a mystery amount between 1 and 12 that you learn by clicking on that crystal ball. 
-            </li>
-            <li>To win the game, match your sum to the Magic Number without going over. 
-            </li>
-            <li>You will receive a new Magic Number each time you start a new game.  
-            </li>
-            <li>The crystal balls will hold a new value as well!  
-            </li>
-            <li>Good luck!  
-            </li>
+          <ul class= "instructions">
+            <li>At the start of each game, you will be given a Magic Number that you need to match exactly by determining the mystery values of each crystal ball.</li>
+            <li>By clicking on one of the four crystal balls below, you will increase your sum by a mystery amount between 1 and 12 that you learn by clicking on that crystal ball.</li>
+            <li>To win the game, match your sum to the Magic Number without going over.</li>
+            <li>You will receive a new Magic Number each time you start a new game.</li>
+            <li>The crystal balls will hold a new value as well!</li>
+            <li>Good luck!</li>
           </ul>
       </div>
     </div>
   </div>
 
-  <div class= "row">
-    <div class= "col-md-4 text-center">
+  <div class="row">
+    <div class="col-md-4 text-center">
       <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Game</button>
-      <div class="alert alert-success" role="alert">You win!</div>
-      <div class="alert alert-info" role="alert">Better luck next time!</div>
-      <div class="alert alert-warning" role="alert">Keep going...</div>
+      <div style="display: none" class="alert alert-success" role="alert">You win!</div>
+      <div style="display: none" class="alert alert-info" role="alert">Better luck next time!</div>
+      <div style="display: none" class="alert alert-warning" role="alert">Keep going...</div>
     </div>
 
-    <div class= "col-md-4 text-center">
-    <div id= "targetNumber">Magic Number</div>
-    <div id="clickSum">Your Sum So Far...</div>
+    <div class="col-md-4 text-center">
+      <div id="targetNumber">Magic Number</div>
+      <div id="clickSum">Your Sum So Far...</div>
     </div>
 
-    <div class= "col-md-4 text-center">
+    <div class="col-md-4 text-center">
       <div id="wins"></div>
       <div id="losses"></div>
     </div>
   </div>
 
-  <div class= "row">
-    <div class= "col-md-12">
-      <div class= "container text-center">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
         <h4>Click any crystal to determine its mystery value and to start each game.</h4>
-        <div class="crystals">
-          <div id="blue"></div>
-          <div id="green"></div>
-          <div id="red"></div>
-          <div id="purple"></div>
-        </div>
       </div>
     </div>
   </div>
 
-  </body>
-  </html>
+  <div class="row">
+    <div class="col-md-3">
+      <div id="blue">
+        <img class="img-responsive" src="assets/images/blue.jpg">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div id="green">
+        <img class="img-responsive" src="assets/images/green.jpg">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div id="red">
+        <img class="img-responsive" src="assets/images/red.jpg">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div id="purple">
+        <img class="img-responsive" src="assets/images/purple.jpg">
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+
+</html>
